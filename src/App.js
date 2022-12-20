@@ -1,15 +1,26 @@
 import './App.css';
-import Search from './components/search/search';
+import CurrentWeather from './components/CurrentWeather/CurrentWeather';
+import Navbar from './components/Navbar/Navbar';
+import Search from './components/Search/Search';
 
 function App() {
 
   const handleOnSearchChange = (searchData) => {
-    console.log('search');
+    console.log(searchData);
   }
+  
 
   return (
-    <div className="container">
-      <Search onSearchChange={handleOnSearchChange}  />
+    <div>
+      <div>
+        <Navbar />
+      </div>
+      <div className="container">
+        <Search onSearchChange={handleOnSearchChange} />
+      </div>
+      <div>
+        <CurrentWeather />
+      </div>
     </div>
   );
 }
